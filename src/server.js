@@ -30,9 +30,10 @@ import assets from './assets.json'; // eslint-disable-line import/no-unresolved
 import configureStore from './store/configureStore';
 import { setRuntimeVariable } from './actions/runtime';
 import { port, auth } from './config';
+import db from './data/db';
+import receiptRouter from './routes/receipt';
 
 const app = express();
-
 //
 // Tell any CSS tooling (such as Material UI) to use all vendor prefixes if the
 // user agent is not known.
@@ -48,6 +49,11 @@ app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+db.connect(process.env.MONGODB_CONNECTION_STRING, (err) => {
+  if (err) return console.log(err);
+});
+
+app.use('/receipts', receiptRouter);
 //
 // Authentication
 // -----------------------------------------------------------------------------
