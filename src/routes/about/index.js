@@ -8,8 +8,9 @@
  */
 
 import React from 'react';
+import axios from 'axios';
 import Layout from '../../components/Layout';
-import Page from '../../components/Page';
+import ReceiptsList from '../../components/ReceiptsList';
 
 export default {
 
@@ -17,11 +18,11 @@ export default {
 
   async action() {
     const data = await require.ensure([], require => require('./about.md'), 'about');
-
+    const receipts = await axios.get('/receipts/recent');
     return {
       title: data.title,
       chunk: 'about',
-      component: <Layout><Page {...data} /></Layout>,
+      component: <Layout><ReceiptsList {...receipts.data} /></Layout>,
     };
   },
 

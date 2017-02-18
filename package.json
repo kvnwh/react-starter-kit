@@ -13,6 +13,7 @@
     "not ie < 9"
   ],
   "dependencies": {
+    "axios": "^0.15.3",
     "babel-polyfill": "^6.22.0",
     "bluebird": "^3.4.7",
     "body-parser": "^1.16.0",
@@ -155,7 +156,8 @@
       "import/extensions": "off",
       "import/no-extraneous-dependencies": "off",
       "react/jsx-filename-extension": "off",
-      "react/prefer-stateless-function": "off"
+      "react/prefer-stateless-function": "off",
+      "react/forbid-prop-types": "off"
     }
   },
   "stylelint": {
