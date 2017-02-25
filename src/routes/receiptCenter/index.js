@@ -9,20 +9,26 @@
 
 import React from 'react';
 import axios from 'axios';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Layout from '../../components/Layout';
 import ReceiptsList from '../../components/ReceiptsList';
 
 export default {
 
-  path: '/about',
+  path: '/receiptCenter',
 
   async action() {
-    const data = await require.ensure([], require => require('./about.md'), 'about');
-    const receipts = await axios.get('/receipts/recent');
+    // const data = await require.ensure([], require => require('./about.md'), 'about');
+    const receipts = await axios.get('/receipts/byMonth/2015-01-01');// await axios.get('/receipts/recent');
+
     return {
-      title: data.title,
+      title: 'Report List',
       chunk: 'about',
-      component: <Layout><ReceiptsList {...receipts.data} /></Layout>,
+      component: <MuiThemeProvider>
+        <Layout>
+          <ReceiptsList {...receipts.data} />
+        </Layout>
+      </MuiThemeProvider>,
     };
   },
 

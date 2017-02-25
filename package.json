@@ -30,6 +30,7 @@
     "history": "^4.5.1",
     "isomorphic-style-loader": "^1.1.0",
     "jsonwebtoken": "^7.2.1",
+    "material-ui": "0.17.0",
     "mongodb": "^2.2.24",
     "node-fetch": "^1.6.3",
     "normalize.css": "^5.0.0",
@@ -39,11 +40,13 @@
     "query-string": "^4.3.1",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
+    "react-tap-event-plugin": "^0.2.2",
     "sequelize": "^3.30.1",
     "source-map-support": "^0.4.11",
     "sqlite3": "^3.1.8",
     "universal-router": "^2.0.0",
-    "whatwg-fetch": "^2.0.2"
+    "whatwg-fetch": "^2.0.2",
+    "react-tap-event-plugin": "2.0.1"
   },
   "devDependencies": {
     "assets-webpack-plugin": "^3.5.1",

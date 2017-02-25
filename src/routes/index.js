@@ -21,7 +21,7 @@ export default {
     require('./contact').default,
     require('./login').default,
     require('./register').default,
-    require('./about').default,
+    require('./receiptCenter').default,
     require('./privacy').default,
     require('./admin').default,
 
