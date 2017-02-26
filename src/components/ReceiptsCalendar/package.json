@@ -1,0 +1,6 @@
+{
+  "name": "ReceiptsCalendar",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./ReceiptsCalendar.jsx"
+}
