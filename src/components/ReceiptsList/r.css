@@ -1,1 +1,9 @@
 @import '../variables.css';
+
+.warn {
+    background: #FFEA00;
+}
+
+.alert {
+    background: #e91e63;
+}
